@@ -1,1 +1,164 @@
 # Results
+1. The meat production in different continents
+```{r}
+# Interactive
+library(tidyverse)
+library(readr)
+library(ggplot2)
+global_meat_production <- read_csv("global-meat-production.csv")
+#View(global_meat_production)
+Africa <- global_meat_production |>
+  filter(Entity == "Africa")
+Oceania <- global_meat_production |>
+  filter(Entity == "Oceania")
+South_America <- global_meat_production |>
+  filter(Entity == "South America")
+North_America <- global_meat_production |>
+  filter(Entity == "North America")
+Europe <- global_meat_production |>
+  filter(Entity == "Europe")
+Asia <- global_meat_production |>
+  filter(Entity == "Asia")
+
+df <- data.frame(year = Africa$Year, 
+                 Africa_meat_production = Africa$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Oceania_meat_production = Oceania$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 South_America_meat_production = South_America$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 North_America_meat_production = North_America$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Europe_meat_production = Europe$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Asia_meat_production = Asia$`Meat, total | 00001765 || Production | 005510 || tonnes`)
+
+library(plotly)
+
+# Melt the data frame to long format for better compatibility with plot_ly
+library(reshape2)
+df_long <- melt(df, id.vars = "year")
+
+# Create an interactive line chart
+p <- plot_ly(data = df_long, x = ~year, y = ~value, color = ~variable, type = 'scatter', mode = 'lines+markers') %>%
+  layout(title = "Interactive Meat Production Over Years",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Meat Production (tonnes)"))
+
+# Display the plot
+p
+```
+```{r}
+#Static
+ggplot(df, aes(x = year)) +
+  geom_ribbon(aes(ymin = 0, ymax = Africa_meat_production, fill = "Africa"), alpha = 0.3) +
+  geom_ribbon(aes(ymin = 0, ymax = Oceania_meat_production, fill = "Oceania"), alpha = 0.3) +
+  geom_ribbon(aes(ymin = 0, ymax = South_America_meat_production, fill = "South America"), alpha = 0.3) +
+  geom_ribbon(aes(ymin = 0, ymax = North_America_meat_production, fill = "North America"), alpha = 0.3) +
+  geom_ribbon(aes(ymin = 0, ymax = Europe_meat_production, fill = "Europe"), alpha = 0.3) +
+  geom_ribbon(aes(ymin = 0, ymax = Asia_meat_production, fill = "Asia"), alpha = 0.3) +
+  geom_line(aes(y = Africa_meat_production, color = "Africa"), size = 1) +
+  geom_line(aes(y = Oceania_meat_production, color = "Oceania"), size = 1) +
+  geom_line(aes(y = South_America_meat_production, color = "South America"), size = 1) +
+  geom_line(aes(y = North_America_meat_production, color = "North America"), size = 1) +
+  geom_line(aes(y = Europe_meat_production, color = "Europe"), size = 1) +
+  geom_line(aes(y = Asia_meat_production, color = "Asia"), size = 1) +
+  labs(title = "Meat Production Over Years",
+       x = "Year",
+       y = "Meat Production (tonnes)",
+       color = "Region") +
+  theme_minimal()
+
+```
+2. The meat production in several big targeting countries
+```{r}
+#interactive
+global_meat_production <- read_csv("global-meat-production.csv")
+#View(global_meat_production)
+China <- global_meat_production |>
+  filter(Entity == "China")
+United_States <- global_meat_production |>
+  filter(Entity == "United States")
+India <- global_meat_production |>
+  filter(Entity == "India")
+United_Kingdom <- global_meat_production |>
+  filter(Entity == "United Kingdom")
+Sri_Lanka <- global_meat_production |>
+  filter(Entity == "Sri Lanka")
+Macao <- global_meat_production |>
+  filter(Entity == "Macao")
+Saint_Vincent <- global_meat_production |>
+  filter(Entity == "Saint Vincent and the Grenadines")
+
+df2 <- data.frame(year = China$Year, 
+                 China_meat_production = China$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 United_States_meat_production = United_States$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 India_meat_production = India$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 United_Kingdom_meat_production = United_Kingdom$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Sri_Lanka_meat_production = Sri_Lanka$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Macao_meat_production = Macao$`Meat, total | 00001765 || Production | 005510 || tonnes`,
+                 Saint_Vincent_meat_production = Saint_Vincent$`Meat, total | 00001765 || Production | 005510 || tonnes`)
+
+df_long2 <- melt(df2, id.vars = "year")
+
+# Create an interactive line chart
+p <- plot_ly(data = df_long2, x = ~year, y = ~value, color = ~variable, type = 'scatter', mode = 'lines+markers') %>%
+  layout(title = "Interactive Meat Production Over Years",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Meat Production (tonnes)"))
+
+# Display the plot
+p
+```
+3. World beef production
+```{r}
+library(readr)
+beef_and_buffalo_meat_production_tonnes <- read_csv("beef-and-buffalo-meat-production-tonnes.csv")
+# Assuming your data frame is named 'beef_data'
+# Filter rows without NA values
+filtered_data <- na.omit(beef_and_buffalo_meat_production_tonnes)
+
+# Install and load necessary packages
+# install.packages(c("plotly", "maps", "rworldmap"))
+library(plotly)
+library(maps)
+library(rworldmap)
+library(viridis)
+# Create an interactive world map plot
+fig <- plot_ly(data = filtered_data, type = 'choropleth', locations = ~Code, locationmode = "ISO-3", z = ~`Meat, beef and buffalo | 00001806 || Production | 005510 || tonnes`,
+               color = ~`Meat, beef and buffalo | 00001806 || Production | 005510 || tonnes`, colors = viridis(20),  # Use viridis colors
+               hovertext = ~paste("Country: ", Code, "<br>Year: ", Year, "<br>Beef Production: ", `Meat, beef and buffalo | 00001806 || Production | 005510 || tonnes`),
+               animation_frame = ~Year,
+               colorbar = list(title = 'Beef Production'))
+
+# Display the plot
+fig
+```
+4. per capita meat type
+```{r}
+library(readr)
+per_capita_meat_type <- read_csv("per-capita-meat-type.csv")
+View(per_capita_meat_type)
+```
+```{r}
+# Assuming ggplot2 is already installed
+# install.packages("ggplot2")
+library(ggplot2)
+
+# Example data
+data <- data.frame(
+  category = c("A", "B", "C", "D"),
+  value1 = c(10, 20, 15, 25),
+  value2 = c(5, 15, 10, 20)
+)
+
+# Melt the data for ggplot2 (assuming it's not in long format)
+library(reshape2)
+data_long <- melt(data, id.vars = "category")
+
+# Create a stacked bar chart
+ggplot(data_long, aes(x = category, y = value, fill = variable)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Stacked Bar Chart Example",
+       x = "Categories",
+       y = "Values",
+       fill = "Variables") +
+  theme_minimal()
+
+```
+

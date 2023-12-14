@@ -6,11 +6,11 @@ execute:
   echo: true
 
 book:
-  title: "YOUR PROJECT TITLE"
+  title: "Meat And Dairy Production Analysis"
   author:
-    - AUTHOR1 (UNI1)
-    - AUTHOR2 (UNI2)
-  repo-url: https://github.com/YOUR_GITHUB_ACCOUNT/REPO_NAME
+    - Nafisa Ali (na3070)
+    - Yu He (yh3659)
+  repo-url: https://github.com/yuhe6/meat_dairy_production
   date: today
   page-footer:
     right: |
