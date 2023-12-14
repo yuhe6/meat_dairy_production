@@ -1,1 +1,42 @@
 # Introduction
+
+"Growing up, meat was the heart of our meals, a comforting tradition. College introduced us to a harsh reality: our beloved meat contributed to environmental havoc – greenhouse gases, land use, and water depletion. Faced with a choice, we shifted to a plant-based diet, a personal transformation met with familial resistance. This journey wasn't just about our plate; it was a step towards collective change. In every plant-based bite, we found a small act contributing to a more sustainable future, bridging the gap between personal taste and global responsibility."
+
+This story is personal to our team and as we navigated this personal shift, we couldn't help but ponder the broader implications. Could our individual choices truly make a difference in the grand scheme of things? The realization dawned that collective action was key. The challenge wasn't just about altering our diet; it was about advocating for sustainable practices in agriculture, promoting awareness, and encouraging a broader societal shift.
+
+For those unfamiliar with the intricacies of this issue, understanding the tension between the nutritional importance of meat and its environmental costs is essential. The alarming rise in meat consumption, coupled with the compounding environmental challenges, necessitates a comprehensive and strategic approach. Developing solutions that minimize the environmental impact of meat production while ensuring adequate nutrition for the global population is not only a scientific and agricultural challenge but a societal imperative for the well-being of our planet and future generations. This visualization problem seeks to unravel the complexities surrounding meat production and consumption, aiming to inspire sustainable practices and informed decision-making for a more resilient and eco-friendly global food system.
+
+In the coming decades, the global challenge of feeding the world in a sustainable manner is reaching a critical juncture. At the heart of this dilemma lies the role of meat as a crucial source of nutrition for millions worldwide. Over the last half-century, the demand for meat has surged, with production exceeding 340 million tonnes annually. While meat consumption remains a fundamental part of diets across various cultures, the environmental repercussions of its production have become increasingly apparent.
+
+The exponential growth in meat production has led to significant environmental consequences, posing threats to the delicate balance of our planet. Notably, the environmental impacts include a surge in greenhouse gas emissions, substantial usage of agricultural land, and the depletion of freshwater resources. These consequences signal an urgent need to reassess and transform the way we produce and consume meat, dairy, and other protein products to mitigate the escalating environmental toll.
+
+And hence, the overarching problem lies in navigating the delicate balance between meeting the rising global demand for meat and addressing the severe environmental impacts associated with its production. As the world faces the challenge of sustainably feeding a growing population, it is imperative to develop innovative solutions that reconcile the nutritional needs of individuals with the imperative to reduce the ecological footprint of meat production.
+
+Our project proposal is clear: the surging global demand for meat has led to significant environmental consequences, including escalating greenhouse gas emissions, vast land use, and water depletion. To address this, we propose leveraging visualization to illuminate the complexities and urgency of the global meat dilemma. Through data-driven charts, we aim to showcase the environmental impact trends, highlight regions with the most substantial ecological footprint, and compare the consequences of meat-based diets with sustainable alternatives. By creating interactive tools, we can simulate different scenarios, demonstrating the potential impact of dietary shifts and sustainable farming practices. Through these visualizations, we aim to tell a compelling story, making the intricate relationships between meat production, environmental repercussions, and global food systems accessible and actionable. Our goal is to inspire informed decisions and foster a collective shift towards more sustainable and mindful dietary choices.
+
+We want to our dataset to provide us answers to questions such as how has global meat production changed over the past 50 years, and what are the key drivers of this change?
+We want to ask ourselves - Can we visualize the overall trend in global meat production, emphasizing periods of significant growth or decline? 
+What regional shifts have occurred in meat production since 1961, and how can these changes be visualized? Further, can we create a map illustrating the evolving distribution of meat production among different regions? 
+Are there significant regional variations in the distribution of meat types, and how can we visually represent these differences on a global scale?
+What specific factors contribute to certain countries favoring other meat types like wild game, horse, and duck?
+How do the changing shares of poultry, cattle, pig, and sheep & goat meats correlate with each other, and what visualizations can effectively communicate these relationships?
+Can we create a visual representation of the interplay between different meat types on a global scale?
+To what extent do cultural preferences influence the distribution of meat types in different countries, and how can we visually represent these influences?
+Are there visualizations that can capture the cultural nuances affecting meat production preferences at a global level?
+We do not want to limit ourselves and thus, based on historical trends, what visualizations can provide insights into the potential future trajectories of meat type shares globally?
+Or can we create interactive visualizations that allow users to explore the projected changes in the distribution of meat types over the coming years?
+
+The answers to these questions, derived from our comprehensive dataset on global meat production, will serve as a powerful lens through which we can address the overarching problem statement. By visualizing the overall trend in global meat production over the past 50 years, we not only gain insights into historical patterns but also identify key drivers behind the shifts – whether they be technological advancements, economic factors, or changing dietary preferences.
+
+The exploration of regional shifts in meat production since 1961, bolstered by dynamic visualizations and maps, enables us to understand how geopolitical, environmental, and economic factors have influenced the global landscape of meat production. Uncovering significant regional variations in the distribution of meat types on a global scale offers valuable insights into the intricate web of cultural, economic, and environmental factors shaping dietary choices.
+
+Delving into the factors contributing to the preference for specific meat types in different countries, including wild game, horse, and duck, allows us to connect our dataset with cultural nuances and local traditions. Analyzing the correlations between the changing shares of poultry, cattle, pig, and sheep & goat meats provides a nuanced understanding of the interplay between these categories on a global scale.
+
+Furthermore, our endeavor doesn't end with historical analysis; we aim to peer into the future. Visualizations offering insights into potential future trajectories of meat type shares globally empower us to anticipate trends, adapt strategies, and inform decision-making. Interactive visualizations that allow users to explore projected changes in the distribution of meat types over the coming years provide a tool for stakeholders to engage with the data dynamically and actively participate in shaping a sustainable future.
+
+In conclusion, our dataset, armed with these visualizations, becomes not only a historical record of global meat production but a dynamic and forward-looking resource. It illuminates the past, clarifies the present, and offers a glimpse into the future – a comprehensive toolkit for addressing the challenges of feeding the world sustainably in the coming decades.
+
+
+
+
+
