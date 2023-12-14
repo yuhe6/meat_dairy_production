@@ -28,7 +28,6 @@ We do not want to limit ourselves and thus, based on historical trends, what vis
 Or can we create interactive visualizations that allow users to explore the projected changes in the distribution of meat types over the coming years?
 Which countries exhibit the highest per capita meat consumption?
 How has per capita meat consumption changed globally over the years?
-Explore the relationship between per capita meat supply and average GDP per capita.
 How does per capita meat consumption vary across income groups?
 Highlighting specific countries or regions and compare their per capita meat consumption.
 How have preferences for specific meat types changed over time in key countries?
