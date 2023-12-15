@@ -129,36 +129,169 @@ fig <- plot_ly(data = filtered_data, type = 'choropleth', locations = ~Code, loc
 # Display the plot
 fig
 ```
-4. per capita meat type
+4. per capita meat type in 2020
 ```{r}
-library(readr)
-per_capita_meat_type <- read_csv("per-capita-meat-type.csv")
-View(per_capita_meat_type)
-```
-```{r}
-# Assuming ggplot2 is already installed
-# install.packages("ggplot2")
-library(ggplot2)
+library(tidyverse)
 
-# Example data
-data <- data.frame(
-  category = c("A", "B", "C", "D"),
-  value1 = c(10, 20, 15, 25),
-  value2 = c(5, 15, 10, 20)
-)
+# Assuming your data is named 'meat_data'
+# Skip the first row (description) and assign column names
+meat_data <- read.table(text = "Entity Meat_poultry Beef Sheep_goat Pig Other Fish_seafood
+1 Argentina 46.3939700 47.096455 1.4250365 14.47114700 1.1540788 6.8040480
+2 Brazil 48.2454450 35.304220 0.6480582 14.14761000 0.5084764 8.0558620
+3 China 15.1313200 6.737377 3.7979817 35.69698700 0.5252528 40.3333550
+4 Ethiopia 0.5787864 3.688538 2.3445760 0.01961988 1.1085232 0.5297368
+5 India 2.5694962 1.126625 0.5929607 0.23718427 0.0000000 7.8863770
+6 Japan 22.4991100 9.654016 0.1514752 21.53976600 0.1009834 46.6543460
+7 Portugal 30.2687700 18.565240 2.1090117 37.71467000 0.6633980 59.3592700
+8 United_Kingdom 33.1334100 17.563847 3.9885620 24.33630400 1.0528184 18.1307490
+9 United_States 57.8270800 37.313194 0.6010312 30.18949900 0.7980906 22.4549200", header = TRUE)
 
-# Melt the data for ggplot2 (assuming it's not in long format)
-library(reshape2)
-data_long <- melt(data, id.vars = "category")
+# Reshape the data into long format
+meat_data_long <- meat_data %>%
+  pivot_longer(cols = -Entity, names_to = "Meat_Type", values_to = "Consumption")
 
 # Create a stacked bar chart
-ggplot(data_long, aes(x = category, y = value, fill = variable)) +
+ggplot(meat_data_long, aes(x = Entity, y = Consumption, fill = Meat_Type)) +
   geom_bar(stat = "identity") +
-  labs(title = "Stacked Bar Chart Example",
-       x = "Categories",
-       y = "Values",
-       fill = "Variables") +
+  labs(title = "Meat Consumption by Country",
+       x = "Country",
+       y = "Consumption",
+       fill = "Meat Type") +
   theme_minimal()
 
 ```
+5. Interactive stacked bar chart
+```{r}
+library(tidyverse)
+library(plotly)
 
+# Assuming your data is named 'meat_data'
+meat_data <- read.table(text = "Entity Meat_poultry Beef Sheep_goat Pig Other Fish_seafood
+1 Argentina 46.3939700 47.096455 1.4250365 14.47114700 1.1540788 6.8040480
+2 Brazil 48.2454450 35.304220 0.6480582 14.14761000 0.5084764 8.0558620
+3 China 15.1313200 6.737377 3.7979817 35.69698700 0.5252528 40.3333550
+4 Ethiopia 0.5787864 3.688538 2.3445760 0.01961988 1.1085232 0.5297368
+5 India 2.5694962 1.126625 0.5929607 0.23718427 0.0000000 7.8863770
+6 Japan 22.4991100 9.654016 0.1514752 21.53976600 0.1009834 46.6543460
+7 Portugal 30.2687700 18.565240 2.1090117 37.71467000 0.6633980 59.3592700
+8 United_Kingdom 33.1334100 17.563847 3.9885620 24.33630400 1.0528184 18.1307490
+9 United_States 57.8270800 37.313194 0.6010312 30.18949900 0.7980906 22.4549200", header = TRUE)
+
+# Reshape the data into long format
+meat_data_long <- meat_data %>%
+  pivot_longer(cols = -Entity, names_to = "Meat_Type", values_to = "Consumption")
+
+# Create interactive stacked bar chart using plotly
+plot_ly(meat_data_long, x = ~Entity, y = ~Consumption, color = ~Meat_Type, type = "bar") %>%
+  layout(title = "Interactive Stacked Bar Chart - Meat Consumption by Country",
+         xaxis = list(title = "Country"),
+         yaxis = list(title = "Consumption"),
+         barmode = "stack")
+
+```
+
+
+6. Different types of meat consumption correlation 
+```{r}
+# Assuming 'meat_data' is your data frame with meat consumption
+library(tidyverse)
+library(corrplot)
+
+# Skip the first row (description) and assign column names
+meat_data <- read.table(text = "Entity Meat_poultry Beef Sheep_goat Pig Other Fish_seafood
+1 Argentina 46.3939700 47.096455 1.4250365 14.47114700 1.1540788 6.8040480
+2 Brazil 48.2454450 35.304220 0.6480582 14.14761000 0.5084764 8.0558620
+3 China 15.1313200 6.737377 3.7979817 35.69698700 0.5252528 40.3333550
+4 Ethiopia 0.5787864 3.688538 2.3445760 0.01961988 1.1085232 0.5297368
+5 India 2.5694962 1.126625 0.5929607 0.23718427 0.0000000 7.8863770
+6 Japan 22.4991100 9.654016 0.1514752 21.53976600 0.1009834 46.6543460
+7 Portugal 30.2687700 18.565240 2.1090117 37.71467000 0.6633980 59.3592700
+8 United_Kingdom 33.1334100 17.563847 3.9885620 24.33630400 1.0528184 18.1307490
+9 United_States 57.8270800 37.313194 0.6010312 30.18949900 0.7980906 22.4549200", header = TRUE)
+
+# Remove the 'Entity' column before calculating the correlation
+cor_matrix <- cor(meat_data[, -1])
+
+# Draw the correlation matrix using corrplot
+corrplot(cor_matrix, method = "color", type = "upper", tl.col = "black")
+
+
+```
+7. Heatmap of global meat consumption
+```{r}
+heatmap_data <- per_capita_meat_type|>
+  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Fish_seafood = "Fish and seafood | 00002960 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  select(-Code) |>
+  select(-Entity) |>
+  filter(Year == 2020) |>
+  select(-Year) |> as.matrix()
+  
+heatmap(heatmap_data[,-1])
+```
+8. Top five meat consumption entity
+```{r}
+another_data2 = read.table(text = "Entity total
+1 Hong_Kong 202.02289
+2 Macao 169.80333
+3 Iceland 168.28322
+4 United_States 149.18381
+5 Portugal 148.68036", header = TRUE)
+ggplot(another_data2, aes(x = Entity, y = total, fill = Entity)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Total Values by Entity",
+       x = "Entity",
+       y = "Total") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for better readability
+```
+9. Top five region meat consumption static
+```{r}
+another_data <- per_capita_meat_type|>
+  select(-Code) |>
+  filter(Entity == 'Hongkong' 
+         | Entity =='United States'
+         | Entity =='Iceland'
+         | Entity =='Macao'
+         | Entity =='Portugal')|>
+  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Fish_seafood = "Fish and seafood | 00002960 || Food available for consumption | 0645pc || kilograms per year per capita")
+
+
+# Assuming 'your_data' is your data frame
+another_data <- replace(another_data, is.na(another_data), 0) |>
+  mutate(total = Meat_poultry + Beef + Sheep_goat + Pig + Other + Fish_seafood)
+
+
+ggplot(another_data, aes(x = Year, y = total, group = Entity, color = Entity)) +
+  geom_line() +
+  labs(title = "Growth Trend of Total Meat Consumption Over Years",
+       x = "Year",
+       y = "Total") +
+  theme_minimal() +
+  facet_wrap(~Entity, scales = "free_y")
+```
+10. Top five region meat consumption interactive
+```{r}
+library(plotly)
+
+# Assuming 'another_data' is your data frame
+plot_list <- lapply(unique(another_data$Entity), function(entity) {
+  subset_data <- another_data[another_data$Entity == entity, ]
+  plot_ly(subset_data, x = ~Year, y = ~total, type = "scatter", mode = "lines", name = entity) %>%
+    layout(title = paste("Growth Trend of Total Meat Consumption Over Years -", entity),
+           xaxis = list(title = "Year"),
+           yaxis = list(title = "Total"))
+})
+
+subplot(plot_list, nrows = length(unique(another_data$Entity)), margin = 0.05)
+
+```

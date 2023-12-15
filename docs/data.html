@@ -143,7 +143,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description"><span class="header-section-number">2.1</span> Description</a></li>
-  <li><a href="#missing-value-analysis" id="toc-missing-value-analysis" class="nav-link" data-scroll-target="#missing-value-analysis"><span class="header-section-number">2.2</span> Missing value analysis</a></li>
+  <li><a href="#research-plan" id="toc-research-plan" class="nav-link" data-scroll-target="#research-plan"><span class="header-section-number">2.2</span> Research plan</a></li>
+  <li><a href="#missing-value-analysis" id="toc-missing-value-analysis" class="nav-link" data-scroll-target="#missing-value-analysis"><span class="header-section-number">2.3</span> Missing value analysis</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/yuhe6/meat_dairy_production/edit/main/data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/yuhe6/meat_dairy_production/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -167,11 +168,44 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Food and Agriculture Organization of the United Nations (FAO) (from https://www.fao.org/faostat/en/#data/QCL)</p>
 <section id="description" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="description"><span class="header-section-number">2.1</span> Description</h2>
+<p>We will be using dataset compiled and filtered for our use case from Food and Agriculture Organization of the United Nations (FAO) (from https://www.fao.org/faostat/en/#data/QCL). The primary data sources include official statistics provided by FAO member countries, collected through annual production questionnaires (APQ) distributed to countries, national publications (Yearbooks and Pocketbooks), or from official country websites. The source data may originate from surveys, administrative records, or estimates based on expert observations. The FAO also incorporates data from unofficial sources, such as specialized international commodity institutes, when official data is unavailable.</p>
+<p>Countries primarily employ sample surveys for data collection, although there are cases where administrative records are also used. Countries are responsible for transmitting pre-checked data. FAO’s validation processes include checks for transmission errors, data consistency, and outlier detection. Additionally, validations assess the alignment of current values with historical data, consistency of totals and partial components, and correspondence between variables from different datasets (e.g., milk production and live animals producing milk). Aggregates are calculated at the conclusion of the statistical process. The total amount for a group of units or all units is derived by summing up observed values. Yield for an aggregated group is computed as the ratio of total output to total input, ensuring consistency in calculations such as global wheat yield being the global wheat production divided by the global area harvested.</p>
+<p>Imputation methods are employed by the FAO to address missing production data since 1991. Ensemble imputation models are used for crops and meat data, while a Hierarchical Linear Model is applied for milk and hen egg data. These techniques contribute to completing the dataset and ensuring its comprehensiveness.</p>
+<p>Data Format and Dimensions: The dataset covers 278 products categorized into five main sectors: Crops Primary, Crops Processed, Live Animals, Livestock Primary, and Livestock Processed. It includes information on area harvested, production quantity, yield, stocks, and various production quantities for different livestock and crop products. The unit of measure varies depending on the product, including hectares, tonnes, 1000 heads, and others.</p>
+<p>Frequency of Updates: The dataset is updated annually, covering data from 1961 up to the current year minus one. The latest update was on June 22, 2023.</p>
+<p>Import Plan: To import the data, we have utilized the provided links to the FAO website’s data portal (FAOSTAT). The data is available for download in various formats, including CSV and Excel, facilitating easy import into our local systems to work upon. It is not possible to assess the overall accuracy of the dataset, as the source data is largely collected by member countries. For data that is imputed (including for non-reporting countries or for products for which countries do not collect official data), the accuracy of the imputations is unknown. However, imputation processes are assessed and adjusted on a regular basis.</p>
 </section>
-<section id="missing-value-analysis" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="missing-value-analysis"><span class="header-section-number">2.2</span> Missing value analysis</h2>
+<section id="research-plan" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="research-plan"><span class="header-section-number">2.2</span> Research plan</h2>
+<p>We plan to align our work by covering major topics/categories which will create a huge impact to the audience.</p>
+<p>Temporal Analysis:</p>
+<p>The best way we will be able to show our audience, the temporal analysis is via time series visualizations to analyze the overall trend in global meat production and identify periods of significant growth or decline.</p>
+<p>Regional Analysis:</p>
+<p>Developing regional production charts to identify shifts in meat production and creating maps illustrating the changing distribution of meat production across regions will help people realize the distribution analysis precisely.</p>
+<p>Meat Type Distribution:</p>
+<p>Analyzing relationships between meat types and regional preferences.</p>
+<p>Geographical Variation:</p>
+<p>We want to ask which countries exhibit the highest per capita meat consumption and creating a global map to visually represent the distribution of per capita meat consumption.</p>
+<p>Temporal Trends:</p>
+<p>Our next question is how has per capita meat consumption changed globally over the years and we can takle this using a time-series chart to illustrate the trends in per capita meat consumption since 1961.</p>
+<p>Economic Influences:</p>
+<p>Exploring the relationship between per capita meat supply and average GDP per capita by creating a scatter plot to showcase the correlation between economic development and meat consumption.</p>
+<p>Income Groups:</p>
+<p>Developing visualizations comparing meat supply in high-income, upper-middle-income, and lower-middle-income countries and how does per capita meat consumption vary across income groups?</p>
+<p>Country-Specific Analysis:</p>
+<p>Using a multi-line chart or small multiples to show consumption trends for selected countries and highlighting specific countries or regions and compare their per capita meat consumption.</p>
+<p>Comparison Across Types:</p>
+<p>We can create a stacked bar chart or pie chart to represent the proportion of per capita consumption for pigmeat, poultry, beef/buffalo, mutton &amp; goat, and other meat types, thereby answering to the question - What are the preferences for different types of meat globally?</p>
+<p>Changes Over Time:</p>
+<p>We will dig deeper into the question - How have preferences for specific meat types changed over time in key countries using line charts or area charts to depict changes in the composition of meat consumption.</p>
+</section>
+<section id="missing-value-analysis" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="missing-value-analysis"><span class="header-section-number">2.3</span> Missing value analysis</h2>
+<p>One potential issue is the variability in data quality between countries due to differences in data collection methods. Some countries may provide limited or no data, leading to imputation of biased values. The dataset relies on conversion factors and may include estimates and imputed data in cases where official information is lacking.</p>
+<p>Missing value analysis and imputation methods play a crucial role in ensuring the completeness and reliability of datasets. In the context of the FAO’s dataset on crops and livestock products, where missing production data have been identified, the organization has implemented specific imputation methods to fill in these gaps. The use of ensemble imputation models for crops and meat data, along with a Hierarchical Linear Model for milk and hen egg data, reflects a sophisticated approach to handle missing information.</p>
 
 
 </section>
