@@ -6,3 +6,5 @@ Some of the finding are: the world meat consumption total amount is increasing i
 We have many takeaways. We learned more about the structure of the world meat data and how to research each question according to certain sequence.
 
 One challenges that we met was at the beginning of our project. When we were dealing with wonder.cdc.gov, we struggled a lot on trying to import the cancer data by calling its api. That took us almost 5 days and we still had not made any big progress. But after we switched our topic to world meat, we spent only 3 days and completed all of the data importing part and visualizations part, because we chose to download the data as csv and uploaded to github. So calling the API to import the data could be challenging for us.
+
+There are also many limitations: in the dataset, it has a poultry category, but the poultry category does not tell which types of poultry it contains, and we cannot research deeper on the consumption trends of each sub type of poultry in poultry category. In the future, I think we need to search other data sources to see the detailed data of each sub type and make analysis.
