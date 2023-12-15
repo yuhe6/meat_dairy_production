@@ -219,13 +219,21 @@ corrplot(cor_matrix, method = "color", type = "upper", tl.col = "black")
 ```
 7. Heatmap of global meat consumption
 ```{r}
+library(readr)
+per_capita_meat_type <- read_csv("per-capita-meat-type.csv")
 heatmap_data <- per_capita_meat_type|>
-  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Fish_seafood = "Fish and seafood | 00002960 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
+  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
+  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
+  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
+  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
+  rename(Fish_seafood = "Fish and seafood | 00002960 || Food available for consumption | 0645pc || kilograms per year per capita")
+heatmap_data<- heatmap_data|>
   select(-Code) |>
   select(-Entity) |>
   filter(Year == 2020) |>
@@ -257,12 +265,18 @@ another_data <- per_capita_meat_type|>
          | Entity =='United States'
          | Entity =='Iceland'
          | Entity =='Macao'
-         | Entity =='Portugal')|>
-  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")|>
-  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")|>
+         | Entity =='Portugal')
+another_data<-another_data|>
+  rename(Meat_poultry = "Meat, poultry | 00002734 || Food available for consumption | 0645pc || kilograms per year per capita")
+another_data<-another_data|>
+  rename(Beef = "Meat, beef | 00002731 || Food available for consumption | 0645pc || kilograms per year per capita")
+another_data<-another_data|>
+  rename(Sheep_goat = "Meat, sheep and goat | 00002732 || Food available for consumption | 0645pc || kilograms per year per capita")
+another_data<-another_data|>
+  rename(Pig = "Meat, pig | 00002733 || Food available for consumption | 0645pc || kilograms per year per capita")
+another_data<-another_data|>
+  rename(Other = "Meat, Other | 00002735 || Food available for consumption | 0645pc || kilograms per year per capita")
+another_data<-another_data|>
   rename(Fish_seafood = "Fish and seafood | 00002960 || Food available for consumption | 0645pc || kilograms per year per capita")
 
 
