@@ -309,3 +309,6 @@ plot_list <- lapply(unique(another_data$Entity), function(entity) {
 subplot(plot_list, nrows = length(unique(another_data$Entity)), margin = 0.05)
 
 ```
+Some of the findings:
+
+The world meat consumption total amount is increasing in the past 50 years, and for each sub category of the meat, like fish, beef, poultry, they are all increasing. There is no clear correlation between the different types of meat consumption amount. And in the world, US, China, Brazil has the highest beef production amount.

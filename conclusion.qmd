@@ -1,1 +1,8 @@
 # Conclusion
+At the beginning we planned to research on the US cancer topic using the data from wonder.cdc.gov, however, the server was down on Dec 12, and we had to switch our topic to a different one. We finally picked world meat consumption as the topic and researched several questions.
+
+Some of the finding are: the world meat consumption total amount is increasing in the past 50 years, and for each sub category of the meat, like fish, beef, poultry, they are all increasing; there is no clear correlation between the different types of meat consumption amount; and in the world, US, China, Brazil has the highest beef production amount.
+
+We have many takeaways. We learned more about the structure of the world meat data and how to research each question according to certain sequence.
+
+One challenges that we met was at the beginning of our project. When we were dealing with wonder.cdc.gov, we struggled a lot on trying to import the cancer data by calling its api. That took us almost 5 days and we still had not made any big progress. But after we switched our topic to world meat, we spent only 3 days and completed all of the data importing part and visualizations part, because we chose to download the data as csv and uploaded to github. So calling the API to import the data could be challenging for us.
