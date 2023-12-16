@@ -21,12 +21,12 @@ Asia <- global_meat_production |>
   filter(Entity == "Asia")
 
 df <- data.frame(year = Africa$Year, 
-                 Africa_meat_production = Africa$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Oceania_meat_production = Oceania$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 South_America_meat_production = South_America$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 North_America_meat_production = North_America$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Europe_meat_production = Europe$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Asia_meat_production = Asia$`Meat, total | 00001765 || Production | 005510 || tonnes`)
+                 Africa_meat_production = Africa$Meat,
+                 Oceania_meat_production = Oceania$Meat,
+                 South_America_meat_production = South_America$Meat,
+                 North_America_meat_production = North_America$Meat,
+                 Europe_meat_production = Europe$Meat,
+                 Asia_meat_production = Asia$Meat)
 
 library(plotly)
 
@@ -86,13 +86,13 @@ Saint_Vincent <- global_meat_production |>
   filter(Entity == "Saint Vincent and the Grenadines")
 
 df2 <- data.frame(year = China$Year, 
-                 China_meat_production = China$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 United_States_meat_production = United_States$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 India_meat_production = India$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 United_Kingdom_meat_production = United_Kingdom$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Sri_Lanka_meat_production = Sri_Lanka$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Macao_meat_production = Macao$`Meat, total | 00001765 || Production | 005510 || tonnes`,
-                 Saint_Vincent_meat_production = Saint_Vincent$`Meat, total | 00001765 || Production | 005510 || tonnes`)
+                 China_meat_production = China$Meat,
+                 United_States_meat_production = United_States$Meat,
+                 India_meat_production = India$Meat,
+                 United_Kingdom_meat_production = United_Kingdom$Meat,
+                 Sri_Lanka_meat_production = Sri_Lanka$Meat,
+                 Macao_meat_production = Macao$Meat,
+                 Saint_Vincent_meat_production = Saint_Vincent$Meat)
 
 df_long2 <- melt(df2, id.vars = "year")
 
