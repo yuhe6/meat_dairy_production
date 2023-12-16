@@ -31,8 +31,7 @@
             text-anchor: middle;
         }
     </style>
-    <script src="https://d3js.org/d3.v7.js"></script>
-    <script src="scripts/myscript.js"></script>
+    
 </head>
 <body>
 
@@ -42,3 +41,16 @@
 </div>
 
 <div id="chart"></div>
+<p id="description">
+    Our examination of global meat consumption, as we display the top 10 countries, unveils dynamic trends shaped by economic transitions and regional disparities. While total meat production has surged, particularly in countries experiencing strong economic growth, per capita meat consumption has risen globally since 1961. Notably, this growth surpasses the rate of population increase, emphasizing a heightened demand for meat.
+    <br><br>
+    Countries undergoing robust economic transitions, such as China and Brazil, have witnessed remarkable increases in per capita meat consumption, with China experiencing a 15-fold growth since 1961 and Brazil nearly quadrupling its rates. Conversely, India stands as a unique exception, maintaining a nearly constant per capita meat consumption since 1961 due to prevalent lactovegetarian preferences.
+    <br><br>
+    High-income nations, particularly in Europe and North America, exhibit the highest per capita meat consumption, with Australians leading in 2013. However, consumption patterns in these affluent countries have experienced slower growth, stagnation, or even decline over the past 50 years.
+    <br><br>
+    A striking determinant of meat consumption emerges in the form of wealth, revealing a strong positive relationship—wealthier countries tend to have higher per capita meat consumption. This intricate interplay of economic factors and regional preferences underscores the nuanced landscape of global meat consumption, offering valuable insights for understanding and addressing future trends.
+</p>
+<script src="https://d3js.org/d3.v7.js"></script>
+<script src="scripts/myscript.js"></script>
+</body>
+</html>
