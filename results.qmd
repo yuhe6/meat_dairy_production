@@ -312,3 +312,11 @@ subplot(plot_list, nrows = length(unique(another_data$Entity)), margin = 0.05)
 Some of the findings:
 
 The world meat consumption total amount is increasing in the past 50 years, and for each sub category of the meat, like fish, beef, poultry, they are all increasing. There is no clear correlation between the different types of meat consumption amount. And in the world, US, China, Brazil has the highest beef production amount.
+In our comprehensive exploration of global meat production over the past 50 years reveals a fourfold increase in total output since 1961. Asia has emerged as the leading contributor, accounting for 40-45 percent of the world's meat production, marking a significant shift from the dominance of Europe and North America in 1961. Despite a decline in production share, both Europe and North America witnessed substantial absolute increases in meat output, while Asia's production soared by an astounding 15-fold.
+
+The analysis also underscores the dynamic shifts in meat types, with poultry's share tripling to approximately 35 percent by 2013, while the share of beef and buffalo meat nearly halved to around 22 percent. Pigmeat's share remained relatively constant at 35-40 percent. These findings underscore the evolving landscape of global meat production, reflecting changes in regional contributions and shifts in preferences for specific meat types over the past five decades.
+
+
+
+
+
